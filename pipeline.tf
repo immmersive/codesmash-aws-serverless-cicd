@@ -16,10 +16,10 @@ resource "aws_codepipeline" "pipeline" {
       owner             = "AWS"
       provider          = "CodeCommit"
       version           = "1"
-      output_artifacts  = ["${var.repo_name}"] 
+      output_artifacts  = ["${var.cicd_name}"] 
 
       configuration = { 
-        RepositoryName  = "${var.repo_name}"
+        RepositoryName  = "${var.cicd_name}"
         BranchName      = "${var.repo_branch}"
       }    
     }
@@ -33,7 +33,7 @@ resource "aws_codepipeline" "pipeline" {
       category          = "Build"
       owner             = "AWS"
       provider          = "CodeBuild"
-      input_artifacts   = ["${var.repo_name}"] 
+      input_artifacts   = ["${var.cicd_name}"] 
       version           = "1"
 
       configuration = {
