@@ -7,6 +7,7 @@ env:
     key: "$key"
     branch: "$branch"
     cicd_name: "$cicd_name"
+    repo_branch: "$repo_branch"
 
 phases:
   build:
