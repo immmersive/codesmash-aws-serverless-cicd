@@ -1,5 +1,5 @@
 output "repo_name" {
-    value = "${var.cicd_name}-${terraform.workspace}"
+    value = "${aws_codecommit_repository.repo.repository_name}"
 }
 
 output "build_id" {
